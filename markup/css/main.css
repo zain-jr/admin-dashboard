@@ -1557,6 +1557,12 @@ input[type='submit'] {
   color: #b66c0d;
 }
 
+.pendingForAdmin-property-holder .properties-table li .rejectApprove-form {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 0 0 -5px;
+}
+
 .pendingForAdmin-property-holder .properties-table li .delete {
   color: #e14646;
 }
