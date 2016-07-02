@@ -42,7 +42,6 @@ $media-expressions: (
 @import 'base/typography';
 @import 'base/forms';
 
-@import 'list-agency-user';
 @import 'property-listing';
 @import 'admin-login';
 .lightbox {
@@ -156,8 +155,7 @@ a{ outline: none;}
 	z-index: 9999;
 	left: 0;
 	right: 0;
-	background:darken($light-gray, 10%);
-	border-bottom: 1px solid $black;
+	background:#838383;
 	@extend %clearfix;
 	
 	.page-loader-underProgress &{
@@ -254,7 +252,7 @@ a{ outline: none;}
 			right: 0;
 			height: 2px;
 			content: '';
-			background: $mix-black;
+			background: $white;
 		}
 		&:after{
 			top: auto;
@@ -271,7 +269,7 @@ a{ outline: none;}
 				left: -13px;
 				content: '';
 				border: 5px solid transparent;
-				border-right: 5px solid $mix-black;
+				border-right: 5px solid $white;
 				margin: -5px 0 0;
 				transition: left 0.4s ease, right 0.4s ease;
 				-webkit-transition: left 0.4s ease, right 0.4s ease;
@@ -283,7 +281,7 @@ a{ outline: none;}
 				left: auto;
 				right: -8px;
 				border-right: 0;
-				border-left: 5px solid $mix-black;
+				border-left: 5px solid $white;
 			}
 		}
 		&:focus, &:active {
@@ -498,7 +496,7 @@ a{ outline: none;}
 }
 .logout {
 	float: right;
-	color: $mix-black;
+	color: $white;
 	text-decoration: none;
 	margin: 15px 10px 0 20px;
 	
@@ -625,8 +623,7 @@ a{ outline: none;}
 #sidebar-dashboard{
 	overflow: auto;
 	@include squar(300px, 100vh);
-	background:darken($light-gray, 10%);
-	border-right: 1px solid $black;
+	background:$thora-white;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -867,7 +864,8 @@ a{ outline: none;}
 			&.active{
 				> a{
 					border-color: $defualt-blue;
-					background: $defualt-blue;
+					background: #838383;
+					color: #f6f6f6;
 				}
 			}
 			
@@ -901,9 +899,7 @@ a{ outline: none;}
 				display: block;
 				text-decoration: none;
 				padding: 10px 20px;
-				background: rgba($black, 0.7);
-				border-color: $black;
-				color: $white;
+				color: $black;
 				margin: 0 0 5px;
 				transition:color 0.4s ease, background 0.4s ease, border 0.4s ease;
 				-webkit-transition:color 0.4s ease, background 0.4s ease, border 0.4s ease;
@@ -912,7 +908,8 @@ a{ outline: none;}
 				
 				&:hover {
 					border-color: $defualt-blue;
-					background: $defualt-blue;
+					background: #838383;
+					color: #f6f6f6;
 				}
 
 				[class^="icon-"],[class*="icon-"]{

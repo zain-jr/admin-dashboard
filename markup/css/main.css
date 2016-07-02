@@ -910,127 +910,6 @@ input[type='submit'] {
   outline: none !important;
 }
 
-/*list Agency User*/
-.listAgency-user {
-  overflow: hidden;
-  padding: 20px 20px 0;
-  transition: padding 0.4s ease;
-  -moz-transition: padding 0.4s ease;
-  -ms-transition: padding 0.4s ease;
-  -webkit-transition: padding 0.4s ease;
-}
-
-.sideBar-active .listAgency-user {
-  padding: 20px 20px 0 320px;
-}
-
-@media (max-width: 1023px) {
-  .sideBar-active .listAgency-user {
-    padding: 20px 20px 0 260px;
-  }
-}
-
-@media (max-width: 767px) {
-  .sideBar-active .listAgency-user {
-    padding: 20px 20px 0;
-  }
-}
-
-.listAgency-user .table-responsive {
-  overflow-x: auto;
-}
-
-.listAgency-user table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
-  line-height: 18px;
-}
-
-@media (max-width: 1199px) {
-  .listAgency-user table {
-    width: 1024px;
-  }
-}
-
-.listAgency-user table tr {
-  width: 100%;
-  position: relative;
-}
-
-.listAgency-user table tr.deleting:after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 1px;
-  padding: 7px 0;
-  background: rgba(255, 255, 255, 0.9);
-  content: 'Deleting...';
-  color: #e14646;
-  font-size: 18px;
-  line-height: 25px;
-  text-align: center;
-}
-
-.listAgency-user table tr:hover td {
-  background: rgba(0, 0, 0, 0.02);
-}
-
-.listAgency-user table a {
-  display: inline-block;
-  vertical-align: top;
-  cursor: pointer;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 1;
-  margin: 0 3px;
-}
-
-.listAgency-user table a.edit {
-  color: #ef9521;
-}
-
-.listAgency-user table a.edit:hover {
-  color: #b66c0d;
-}
-
-.listAgency-user table a.delete {
-  color: #e14646;
-}
-
-.listAgency-user table a.delete:hover {
-  color: #bc1e1e;
-}
-
-.listAgency-user table th {
-  text-align: left;
-  padding: 10px;
-  background: rgba(19, 55, 131, 0.5);
-  color: #fff;
-}
-
-.listAgency-user table th:first-child {
-  border-radius: 4px 0 0 4px;
-}
-
-.listAgency-user table th:last-child {
-  border-radius: 0 4px 4px 0;
-}
-
-.listAgency-user table td {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 10px;
-}
-
-.listAgency-user table td .fake-address {
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  max-width: 200px;
-}
-
 /*Listing page with table */
 .pendingForAdmin-property-holder {
   overflow: hidden;
@@ -1636,7 +1515,12 @@ input[type='submit'] {
   margin: 0;
 }
 
+.pendingForAdmin-property-holder .properties-table li .delete, .pendingForAdmin-property-holder .properties-table li .accept,
 .pendingForAdmin-property-holder .properties-table li a {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
   display: inline-block;
   vertical-align: top;
   text-decoration: none;
@@ -1650,6 +1534,7 @@ input[type='submit'] {
   max-width: inherit;
 }
 
+.pendingForAdmin-property-holder .properties-table li .delete.details, .pendingForAdmin-property-holder .properties-table li .accept.details,
 .pendingForAdmin-property-holder .properties-table li a.details {
   color: #489ddd;
   font-size: 20px;
@@ -1657,31 +1542,34 @@ input[type='submit'] {
   font-weight: bold;
 }
 
+.pendingForAdmin-property-holder .properties-table li .delete.details:hover, .pendingForAdmin-property-holder .properties-table li .accept.details:hover,
 .pendingForAdmin-property-holder .properties-table li a.details:hover {
   color: #2277b7;
 }
 
+.pendingForAdmin-property-holder .properties-table li .delete.edit, .pendingForAdmin-property-holder .properties-table li .accept.edit,
 .pendingForAdmin-property-holder .properties-table li a.edit {
   color: #ef9521;
 }
 
+.pendingForAdmin-property-holder .properties-table li .delete.edit:hover, .pendingForAdmin-property-holder .properties-table li .accept.edit:hover,
 .pendingForAdmin-property-holder .properties-table li a.edit:hover {
   color: #b66c0d;
 }
 
-.pendingForAdmin-property-holder .properties-table li a.delete {
+.pendingForAdmin-property-holder .properties-table li .delete {
   color: #e14646;
 }
 
-.pendingForAdmin-property-holder .properties-table li a.delete:hover {
+.pendingForAdmin-property-holder .properties-table li .delete:hover {
   color: #bc1e1e;
 }
 
-.pendingForAdmin-property-holder .properties-table li a.accept {
+.pendingForAdmin-property-holder .properties-table li .accept {
   color: #58a36f;
 }
 
-.pendingForAdmin-property-holder .properties-table li a.accept:hover {
+.pendingForAdmin-property-holder .properties-table li .accept:hover {
   color: #3d714d;
 }
 
@@ -2331,8 +2219,7 @@ a {
   z-index: 9999;
   left: 0;
   right: 0;
-  background: #bfc8d3;
-  border-bottom: 1px solid #000;
+  background: #838383;
 }
 
 .page-loader-underProgress #header:before {
@@ -2426,7 +2313,7 @@ a {
   right: 0;
   height: 2px;
   content: '';
-  background: #2e2e2e;
+  background: #fff;
 }
 
 #header .sideBar-opener:after {
@@ -2445,7 +2332,7 @@ a {
   left: -13px;
   content: '';
   border: 5px solid transparent;
-  border-right: 5px solid #2e2e2e;
+  border-right: 5px solid #fff;
   margin: -5px 0 0;
   transition: left 0.4s ease, right 0.4s ease;
   -webkit-transition: left 0.4s ease, right 0.4s ease;
@@ -2457,7 +2344,7 @@ a {
   left: auto;
   right: -8px;
   border-right: 0;
-  border-left: 5px solid #2e2e2e;
+  border-left: 5px solid #fff;
 }
 
 #header .sideBar-opener:focus span:before, #header .sideBar-opener:active span:before {
@@ -2750,7 +2637,7 @@ a {
 
 .logout {
   float: right;
-  color: #2e2e2e;
+  color: #fff;
   text-decoration: none;
   margin: 15px 10px 0 20px;
 }
@@ -2898,8 +2785,7 @@ a {
   overflow: auto;
   width: 300px;
   height: 100vh;
-  background: #bfc8d3;
-  border-right: 1px solid #000;
+  background: #eee;
   position: fixed;
   top: 0;
   left: 0;
@@ -3249,7 +3135,8 @@ a {
 
 #sidebar-dashboard .sideBar-links li.active > a {
   border-color: #133783;
-  background: #133783;
+  background: #838383;
+  color: #f6f6f6;
 }
 
 #sidebar-dashboard .sideBar-links li .badge {
@@ -3290,9 +3177,7 @@ a {
   display: block;
   text-decoration: none;
   padding: 10px 20px;
-  background: rgba(0, 0, 0, 0.7);
-  border-color: #000;
-  color: #fff;
+  color: #000;
   margin: 0 0 5px;
   transition: color 0.4s ease, background 0.4s ease, border 0.4s ease;
   -webkit-transition: color 0.4s ease, background 0.4s ease, border 0.4s ease;
@@ -3302,7 +3187,8 @@ a {
 
 #sidebar-dashboard .sideBar-links li a:hover {
   border-color: #133783;
-  background: #133783;
+  background: #838383;
+  color: #f6f6f6;
 }
 
 #sidebar-dashboard .sideBar-links li a [class^="icon-"], #sidebar-dashboard .sideBar-links li a [class*="icon-"] {

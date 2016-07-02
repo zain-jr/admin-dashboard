@@ -1,0 +1,287 @@
+.agentProfile-page {
+    overflow: hidden;
+
+    .main-infoHolder {
+        float: left;
+
+        @include media('<desktop'){
+            float: none;
+            overflow: hidden;
+        }
+
+        .img-holder {
+            float: left;
+            border: 1px solid $black;
+            @include squar(180px, 200px);
+            white-space: nowrap;
+
+            @include media('<widescreen'){
+                @include squar(150px, 170px);
+            }
+
+            @include media('<tablet'){
+                margin: 0 auto 10px;
+                float: none;
+                overflow: hidden;
+                @include squar(130px, 150px);
+            }
+
+            &:after {
+                content: '';
+                width: 1px;
+                margin: 0 0 0 -5px;
+                @include align(middle);
+                height: 200px;
+
+                @include media('<widescreen'){
+                    height: 170px;
+                }
+                @include media('<tablet'){
+                    height: 150px;
+                }
+            }
+            img {
+                white-space: normal;
+                @include align(middle);
+                width: 100%;
+            }
+        }
+        .cap-name {
+            float: left;
+            padding: 0 0 0 20px;
+            max-width: 550px;
+            @include font(14,20);
+            
+            @include media('<tvscreen'){
+                max-width: 340px;
+            }
+            
+            @include media('<widescreen'){
+                padding: 0 0 0 10px;
+            }
+
+            .name {
+                display: block;
+                @include font(25,28);
+                font-style: italic;
+                letter-spacing: 1px;
+                text-transform: capitalize;
+                color: $defualt-blue;
+                padding: 0 0 10px;
+            }
+        }
+    }
+    .contact-links {
+        @extend %listreset;
+        float: right;
+        @include align-reset(top,16,20);
+        margin: 0 -5px;
+
+        @include media('<tvscreen'){
+            @include align-reset(top,13,18);
+        }
+        
+        @include media('<widescreen'){
+            margin: 0;
+        }
+        
+        @include media('<desktop'){
+            float: none;
+            overflow: hidden;
+            text-align: center;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        li {
+            padding: 0 5px;
+
+            @include media('<widescreen'){
+                display: block;
+                padding: 5px;
+            }
+
+            > a {
+                cursor: pointer;
+                text-decoration: none;
+                @include align(middle);
+                color: $defualt-blue;
+                border: 1px solid $defualt-blue;
+                padding: 10px 25px;
+                position: relative;
+                transition: background 0.4s ease;
+                -webkit-transition: background 0.4s ease;
+                -moz-transition: background 0.4s ease;
+
+                @include media('<widescreen'){ display: block;}
+
+                .show-xs {
+                    @include media('>=tablet'){
+                        display: none;
+                    }
+                }
+
+                &:hover {
+                    color: $white;
+                    background: $defualt-blue;
+                }
+
+                [class^="icon-"], [class*=" icon-"] {
+                    @include align(top);
+                    padding: 0 5px;
+
+                    @include media('<desktop'){
+                        position: absolute;
+                        top: 50%;
+                        left: 8px;
+                        padding: 0;
+                        margin: -8px 0 0;
+                    }
+                }
+            }
+        }
+    }
+    .cols-holder {
+        width: 100%;
+        @include align-reset(top,14,20);
+        text-align: center;
+        padding: 20px 0 0;
+        margin: 0 -10px;
+
+        @include media('<tablet'){
+            margin: 0;
+        }
+
+        .col {
+            text-align: left;
+            width: 33.33%;
+            padding: 0 10px;
+            margin: 0 0 10px;
+
+            @include media('<widescreen'){ width: 50%;}
+
+            @include media('<desktop'){
+                width: 100%;
+            }
+
+            header {
+                overflow: hidden;
+                color: $white;
+                background: $defualt-blue;
+                @include font(18,22);
+                padding: 5px 20px;
+                border-radius: 2px;
+                position: relative;
+
+                &:after{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    border: 25px solid transparent;
+                    border-top: 25px solid $red;
+                    content: '';
+                    border-right: 0;
+                }
+            }
+            .caption {
+                padding: 15px 0;
+                overflow: hidden;
+                @include font(13,20);
+
+                .profile-pic {
+                    @include squar(150px,150px);
+                    margin: 0 auto 10px;
+                    overflow: hidden;
+                    background: $index-white;
+                    padding: 5px;
+                    border: 1px solid darken($index-white, 10%);
+
+                    img {
+                        @include img-res;
+                        max-height: 138px;
+                        min-height: 138px;
+                    }
+                }
+                
+                address, span, strong {
+                    display: block;
+                }
+                .name {
+                    @include font(16,20);
+                    color: $defualt-blue;
+                    padding: 0 0 5px;
+                }
+                a[href^="tel"],a[href*="tel"]{
+                    @include align(top);
+                }
+                .agency-name,
+                .post {
+                    font-weight: 600;
+                    @include font(15,18);
+                    padding: 0 0 5px;
+                }
+                .contact-num {
+                    padding: 0 0 5px;
+                    
+                    a {
+                        text-decoration: none;
+                        &:hover { color: $defualt-blue;}
+                    }
+
+                    span[class^="icon-"], span[class*="icon-"] {
+                        @include align(middle);
+                        padding: 0 10px 0 0;
+                    }
+                }
+                address {
+                    font-weight: 600;
+                }
+                p { margin: 0;}
+
+                ul {
+                    @extend %listreset;
+                    @include font(14,19);
+                    margin: 0 0 10px;
+
+                    li {
+                        @include align-reset(top, 14,19);
+                        display: block;
+                        padding: 6px;
+                        border-bottom: 1px solid rgba($black, 0.2);
+
+                        &:last-child{
+                            border: 0;
+                        }
+
+                        span{
+                            width: 35%;
+                            text-align: right;
+                            
+                            &:first-child{
+                                width: 65%;
+                                text-align: left;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+                .view-all {
+                    @include font(14,19);
+                    text-decoration: none;
+                    display: block;
+                    width: 200px;
+                    margin: 0 auto;
+                    text-align: center;
+                    background: $mix-blue;
+                    color: $white;
+                    border: 1px solid darken($mix-blue, 10%);
+                    padding: 5px;
+
+                    &:hover {
+                        background: darken($mix-blue, 10%);   
+                    }
+                }
+            }
+        }
+    }
+}

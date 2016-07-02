@@ -1,0 +1,570 @@
+.propertyDetails-page {
+	overflow: hidden;
+	
+	@include media('<tablet') {
+		padding: 0 0 20px;
+	}
+	
+	.propertyImage-slider {
+		width: 55%;
+		float: left;
+		position: relative;
+		margin: 0 0 10px;
+		
+		@include media('<widescreen'){
+			width: 62%;
+		}
+
+		@include media('<desktop') {
+			max-width: inherit;
+			float: none;
+			width: 100%;
+			overflow: hidden;
+			display: block;
+		}
+				
+		.propertyImage-mask,
+		.mask {
+			position: relative;
+			overflow: hidden;
+			width: 100% !important;
+		}
+		.propertyImage-slideset,
+		.slideset {
+			width: 100% !important;
+			font-size: 0;
+			line-height: 0;
+			letter-spacing: -4px;
+			white-space: nowrap;
+		}
+		.propertyImage-slide,
+		.slide {
+			width: 100% !important;
+			display: inline-block;
+			vertical-align: top;
+			font-size: 12px;
+			line-height: 15px;
+			letter-spacing: 0;
+			white-space: normal;
+			padding: 0 5px;
+			
+			a{
+				display: block;
+				max-width: inherit;
+				
+				img{
+					@include img-res;
+					max-height: 500px;
+					min-height: 500px;
+
+					@include media('<1855px') {	
+						max-height: 490px;
+						min-height: 490px;
+					}
+					@include media('<tvscreen') {
+						max-height: 400px;
+						min-height: 400px;
+					}
+					@include media('<tvscreen') {
+						max-height: 327px;
+						min-height: 327px;
+					}
+					@include media('<widescreen') {
+						max-height: 340px;
+						min-height: 340px;
+					}
+					@include media('<tablet') {
+						max-height: 270px;
+						min-height: 270px;
+					}
+				}
+			}
+		}
+		.propertyImage-slide {
+			a{
+				img {
+					max-height: 48px;
+					min-height: 48px;
+
+					@include media('<widescreen') {
+						max-height: 45px;
+						min-height: 45px;
+					}
+					@include media('<tablet') {
+						max-height: 30px;
+						min-height: 30px;
+					}
+				}
+			}
+		}
+		.paginationCurrent-num-1, #propertyImageCurrentSlide { display: none;}
+		
+		.propertyImage-pagination {
+			position: relative;
+			overflow: hidden;
+			
+			.propertyImage-mask {
+				max-width: 630px;
+				margin: 0 auto;
+				
+				@include media('<tvscreen'){
+					max-width: 550px;
+				}
+				
+				@include media('<widescreen'){
+					max-width: 500px;
+				}
+				
+				@include media('<tablet') {
+					max-width: 250px;
+				}
+			}
+			
+			.propertyImage-slideset{
+				&.no-indent{ margin: 0 !important;}
+			}
+
+			.propertyImage-slide {
+				width: 16.65% !important;
+				padding: 10px 4px;
+				
+				@include media('<widescreen'){
+					padding: 10px 2px;
+					width: 16.60% !important;
+				}
+				
+				&.active{
+					a {&:after{ display: none;}}
+				}
+				
+				a{
+					background: $light-gray;
+					padding: 3px;
+					border: 1px solid $gray;
+					border-radius: 4px;
+					position: relative;
+					
+					@include media('<widescreen'){
+						padding: 2px;
+					}
+					
+					&:after{
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						background: rgba($white, 0.6);
+						content: '';
+					}
+					
+					&:hover{
+						&:after{ display: none;}
+					}
+				}
+			}
+		}
+		.propertyImage-slider-btn-prev,
+		.propertyImage-slider-btn-next,
+		.propertyImage-pagination-btn-prev-1,
+		.propertyImage-pagination-btn-next-1 {
+			position: absolute;
+			top: 50%;
+			left: 10px;
+			text-decoration: none;
+			@include font(30,30);
+			margin: -15px 0 0;
+			color: $white;
+			
+			&.disabled {
+				color: $gray;
+			}
+		}
+		.propertyImage-slider-btn-next,
+		.propertyImage-pagination-btn-next-1 {
+			left: auto;
+			right: 10px;
+		}
+		.propertyImage-pagination-btn-prev-1,
+		.propertyImage-pagination-btn-next-1{
+			left: 0;
+			color:$dove-black;
+		}
+		.propertyImage-pagination-btn-next-1{
+			left: auto;
+			right: 0;
+		}
+	}
+	.propertyOwnerInfo {
+		overflow: hidden;
+		border-radius: 4px;
+		width: 35%;
+		float: right;
+		
+		@include media('<desktop') {
+			margin: 0 0 20px;
+			width: 100%;
+			float: none;
+		}
+		
+		header {
+			background: $defualt-blue;
+			color: $white;
+			@include font(18,21);
+			position: relative;
+			padding: 10px;
+			
+			@include media('<tvscreen'){
+				@include font(14,18);
+			}
+			
+			span[class^="icon-"], span[class*="icon-"] {
+				position: absolute;
+				top: 50%;
+				left: 5px;
+				padding: 0;
+				margin: -8px 0 0;
+			}
+			span {
+				display: block;
+				padding: 0 0 0 20px;
+			}
+		}
+		
+		.description {
+			background: $index-white;
+			padding: 30px 10px 15px;
+			
+			@include media('<tvscreen') {
+				padding: 10px;
+			}
+
+			.holder{
+				overflow: hidden;
+				padding: 0 10px 0 0;
+			}
+			
+			.agency-name,
+			.agency-profile,
+			.name {
+				position: relative;
+				display: block;
+				@include font(18,22);
+				padding: 0 0 15px;
+
+				@include media('<tvscreen') {
+					@include font(14,18);
+				}
+			}
+			
+			.name {
+				@include font(16,19);
+				padding: 0 0 10px 20px;
+				
+				&:before {
+					position: absolute;
+					top: 0;
+					left: 0;
+					content: "\e911";
+					font-family: 'icomoon';
+				}
+			}
+			
+			.agency-profile {
+				width: 150px;
+				text-decoration: none;
+				text-align: center;
+				color: $white;
+				background: $green;
+				padding:5px 10px;
+				border: 1px solid darken($green, 10%);
+				transition: background 0.4s ease;
+				-webkit-transition: background 0.4s ease;
+				-moz-transition: background 0.4s ease;
+				-ms-transition: background 0.4s ease;
+				
+				&:hover { background: darken($green, 10%);}
+			}
+			
+			img {
+				float: right;
+				@include img-res;
+				max-width: 80px;
+				
+				@include media('<widescreen'){
+					max-width: 60px;
+				}
+			}
+			
+			.contact-links {
+				@extend %listreset;
+				@include align-reset(top,16,20);
+				text-align: center;
+				padding: 20px 0;
+				margin: 0 -5px;
+				
+				@include media('<tvscreen'){
+					padding: 10px 0;
+				}
+
+				@include media('<widescreen'){
+					@include align-reset(top,14,18);
+					padding: 10px 0 0;
+				}
+				
+				li {
+					width: 50%;
+					padding: 0 5px;
+					height: auto;
+					margin: 0 0 10px;
+					
+					> a{
+						cursor: pointer;
+						color: $white;
+						border-radius: 3px;
+						background: $orange;
+						border-bottom: 4px solid darken($orange, 15%);
+						text-decoration: none;
+						display: block;
+						padding: 7px;
+						position: relative;
+						transition: background 0.4s ease,  border 0.4s ease;
+						-webkit-transition: background 0.4s ease,  border 0.4s ease;
+						-moz-transition: background 0.4s ease,  border 0.4s ease;
+						-ms-transition: background 0.4s ease,  border 0.4s ease;
+						
+						span[class^="icon-"],span[class*="icon-"] {
+							position: absolute;
+							top: 50%;
+							left: 10px;
+							margin: -6px 0 0;
+							
+							@include media('<widescreen'){
+								margin: -6px -5px 0;
+							}
+						}
+						
+						&:hover {
+							background:  $green;
+							border-color: $green;
+						}
+					}
+				}
+			}
+			.summary {
+				display: block;
+			}
+			dl {
+				margin: 0;
+				display: block;
+				overflow: hidden;
+				@include align-reset(middle,16,20);
+				padding: 10px 0 0;
+				width: 100%;
+
+				@include media('<tvscreen') {
+					@include align-reset(middle,14,17);
+				}
+
+				dt {
+					width: 50%;
+					font-weight: 600;
+					padding: 0 0 8px;
+				}
+				dd{
+					margin: 0;
+					width: 50%;
+					padding: 0 0 8px;
+
+					@include media('<tvscreen') {
+						padding: 0 0 7px;
+					}
+				}
+			}
+		}
+	}
+	.overviewText-holder {
+		display: block;
+		width: 100%;
+		@include font(14, 20);
+		word-spacing: 1px;
+		position: relative;
+		overflow: hidden;
+		
+		&.height{
+			height: 243px;
+		}
+		
+		p{
+			margin: 0 0 20px;
+		}
+		
+		.overviewText {
+			overflow: hidden;
+			padding: 0 150px 0 0;
+
+			@include media('<desktop'){
+				padding: 0 110px 0 0;
+			}
+		}
+		
+		.btn-showMore {
+			display: none;
+			text-decoration: none;
+			text-transform: capitalize;
+			border: 1px solid $defualt-blue;
+			color: $defualt-blue;
+			text-align: center;
+			padding: 5px;
+			width: 150px;
+			margin: 0 auto;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			cursor: pointer;
+			transition: color 0.4s linear, background 0.4s linear;
+			-webkit-transition: color 0.4s linear, background 0.4s linear;
+			-moz-transition: color 0.4s linear, background 0.4s linear;
+			-ms-transition: color 0.4s linear, background 0.4s linear;
+			
+			@include media('<desktop'){
+				width: 100px;	
+			}
+			
+			&:hover{
+				color: $white;
+				background: $defualt-blue;
+			}
+		}
+	}
+	.property-qucikLinks {
+		@extend %listreset;
+		@include align-reset(top, 15,18);
+		margin: 0 -5px 20px;
+		
+		li {
+			padding: 5px;
+			height: auto;
+			
+			@include media('<tablet'){
+				width: 100%;
+				display: block;
+			}
+
+			> a{
+				text-decoration: none;
+				color: $orange;
+				display: block;
+				cursor: pointer;
+				
+				&.added-to-favs{
+					color: $green;
+
+					.addedToFavs{ display: block;}
+					.addTo { display: none;}
+				}
+
+				@include media('<tablet'){
+					@include align(top);
+				}
+
+				.addedToFavs{
+					display: none;
+				}
+
+				span {
+					padding: 0 5px 0 0;
+				}
+				&:hover {
+					color: darken($orange, 15%);
+				}
+			}
+		}
+	}
+
+	h2 {
+		display: block;
+		@include font(17,19);
+		margin: 0 0 10px;
+		padding: 0 20px;
+
+		@include media('<tvscreen'){
+			padding: 0;
+		}
+	}
+	.feature-list {
+		@extend %listreset;
+		@include align-reset(top, 15, 18);
+		padding: 0 10px;
+
+		@include media('<tvscreen'){
+			padding: 0;
+		}
+
+		li {
+			width: 25%;
+			border-radius: 4px;
+			padding: 0 10px;
+			margin: 0 0 10px;
+			@include align-reset(top, 14, 18);
+			overflow: hidden;
+			position: relative;
+			z-index: 1;
+
+			@include media('<widescreen'){
+				width: 33.33%;
+				@include align-reset(top, 12, 16);
+			}
+
+			@include media('<desktop'){
+				width: 50%;
+			}
+
+			@include media('<tablet'){
+				width: 100%;
+			}
+
+			&:after {
+				position: absolute;
+				right: 10px;
+				left: 10px;
+				bottom: -99999px;
+				top: -9999px;
+				z-index: -1;
+				pointer-events: none;
+				background: $light-gray;
+				content: '';
+			}
+
+			span {
+				background: $light-gray;
+				width: 75%;
+				padding: 10px;
+
+				@include media('<tvscreen'){
+					padding: 5px;
+				}
+
+				&.last-child{
+					width: 25%;
+					text-align: center;
+					color: $green;
+					font-weight: 600;
+					position: relative;
+					max-height: 85px;
+					overflow: hidden;
+
+					&:before{
+						position: absolute;
+						top: 0;
+						left: 0;
+						bottom: -99999px;
+						background: darken($light-gray, 10%);
+						width: 1px;
+						content: '';
+					}
+				}
+			}
+		}
+	}
+}
