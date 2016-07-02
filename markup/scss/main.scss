@@ -44,6 +44,9 @@ $media-expressions: (
 
 @import 'property-listing';
 @import 'admin-login';
+@import 'agent-profile';
+@import 'property-details';
+
 .lightbox {
 	width: 100%;
 	max-width: 500px;
